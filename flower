@@ -1,0 +1,33 @@
+import turtle
+
+# Set up the turtle
+t = turtle.Turtle()
+t.speed(0)
+turtle.bgcolor("black")
+t.pensize(2)
+
+colors = ["red", "yellow", "magenta", "blue", "cyan", "orange", "white", "green"]
+
+# Function to draw a petal
+def draw_petal(radius, angle):
+    for _ in range(2):
+        t.circle(radius, angle)
+        t.left(180 - angle)
+
+# Draw the flower
+for i in range(36):
+    t.color(colors[i % len(colors)])
+    draw_petal(100, 60)
+    t.right(10)
+
+# Draw the center
+t.penup()
+t.goto(0, -20)
+t.pendown()
+t.color("yellow")
+t.begin_fill()
+t.circle(20)
+t.end_fill()
+
+t.hideturtle()
+turtle.done()
