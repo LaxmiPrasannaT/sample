@@ -1,0 +1,75 @@
+import random
+
+# A list of general knowledge questions and their answers
+questions = [
+    {
+        "question": "What is the capital of France?",
+        "options": ["A) Paris", "B) London", "C) Berlin", "D) Rome"],
+        "answer": "A"
+    },
+    {
+        "question": "Which planet is known as the Red Planet?",
+        "options": ["A) Earth", "B) Mars", "C) Jupiter", "D) Venus"],
+        "answer": "B"
+    },
+    {
+        "question": "Who wrote the play 'Romeo and Juliet'?",
+        "options": ["A) Charles Dickens", "B) William Shakespeare", "C) Mark Twain", "D) Jane Austen"],
+        "answer": "B"
+    },
+    {
+        "question": "What is the largest mammal in the world?",
+        "options": ["A) Elephant", "B) Blue Whale", "C) Giraffe", "D) Hippopotamus"],
+        "answer": "B"
+    },
+    {
+        "question": "Which continent is the Sahara Desert located in?",
+        "options": ["A) Asia", "B) North America", "C) Africa", "D) Australia"],
+        "answer": "C"
+    },
+    {
+        "question": "How many colors are there in a rainbow?",
+        "options": ["A) 5", "B) 6", "C) 7", "D) 8"],
+        "answer": "C"
+    },
+    {
+        "question": "What is the chemical symbol for water?",
+        "options": ["A) O2", "B) H2O", "C) CO2", "D) HO"],
+        "answer": "B"
+    },
+    {
+        "question": "In which year did the Titanic sink?",
+        "options": ["A) 1912", "B) 1920", "C) 1905", "D) 1918"],
+        "answer": "A"
+    },
+    {
+        "question": "Which is the smallest prime number?",
+        "options": ["A) 0", "B) 1", "C) 2", "D) 3"],
+        "answer": "C"
+    },
+    {
+        "question": "What is the hardest natural substance on Earth?",
+        "options": ["A) Gold", "B) Iron", "C) Diamond", "D) Silver"],
+        "answer": "C"
+    }
+]
+
+def run_quiz():
+    print("Welcome to the Interactive General Knowledge Quiz!")
+    print("You will be asked 10 questions. Type the letter of your answer (A/B/C/D). Good luck!\n")
+    score = 0
+    random.shuffle(questions)
+    for i, q in enumerate(questions[:10], 1):
+        print(f"Q{i}: {q['question']}")
+        for opt in q['options']:
+            print(opt)
+        answer = input("Your answer (A/B/C/D): ").strip().upper()
+        if answer == q['answer']:
+            print("Correct!\n")
+            score += 1
+        else:
+            print(f"Wrong! The correct answer is {q['answer']}.\n")
+    print(f"Quiz Complete! Your score: {score}/10")
+
+if __name__ == "__main__":
+    run_quiz()
